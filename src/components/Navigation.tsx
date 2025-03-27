@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 import CTAButton from './CTAButton';
 import { cn } from '@/lib/utils';
@@ -11,9 +11,7 @@ const Navigation: React.FC = () => {
   
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Workshops', href: '/workshops' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -55,18 +53,7 @@ const Navigation: React.FC = () => {
             ))}
           </ul>
           
-          <div className="flex items-center space-x-4 ml-6">
-            <div className="flex items-center space-x-2">
-              <a href="https://facebook.com" className="text-gray-600 hover:text-jacarandaPurple" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="https://instagram.com" className="text-gray-600 hover:text-jacarandaPurple" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="https://linkedin.com" className="text-gray-600 hover:text-jacarandaPurple" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-            </div>
+          <div className="flex items-center ml-6">
             <CTAButton
               variant="primary"
               size="sm"
@@ -110,17 +97,6 @@ const Navigation: React.FC = () => {
             </ul>
             
             <div className="mt-8 flex flex-col space-y-4">
-              <div className="flex space-x-4 justify-center">
-                <a href="https://facebook.com" className="text-gray-600 hover:text-jacarandaPurple" aria-label="Facebook">
-                  <Facebook size={24} />
-                </a>
-                <a href="https://instagram.com" className="text-gray-600 hover:text-jacarandaPurple" aria-label="Instagram">
-                  <Instagram size={24} />
-                </a>
-                <a href="https://linkedin.com" className="text-gray-600 hover:text-jacarandaPurple" aria-label="LinkedIn">
-                  <Linkedin size={24} />
-                </a>
-              </div>
               <CTAButton 
                 variant="primary" 
                 size="lg"
