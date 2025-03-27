@@ -5,12 +5,14 @@ interface AnimateOnScrollProps {
   children: React.ReactNode;
   className?: string;
   delay?: 'delay-100' | 'delay-200' | 'delay-300' | 'delay-400' | 'delay-500';
+  threshold?: number;
 }
 
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   children,
   className = '',
   delay = '',
+  threshold = 0.1,
 }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   
@@ -23,7 +25,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold }
     );
     
     const element = elementRef.current;
@@ -36,7 +38,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         observer.unobserve(element);
       }
     };
-  }, []);
+  }, [threshold]);
   
   return (
     <div ref={elementRef} className={`animate-on-scroll ${delay} ${className}`}>
