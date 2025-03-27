@@ -22,9 +22,9 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   const baseStyles = "relative overflow-hidden rounded-full font-medium transition-all flex items-center justify-center whitespace-nowrap";
   
   const variantStyles = {
-    primary: "bg-sigsOrange text-white hover:bg-sigsOrange/90 shadow-sm border border-transparent",
-    secondary: "bg-white text-sigsBlue hover:bg-gray-50 border border-gray-200",
-    outline: "bg-transparent text-sigsBlue border-2 border-sigsBlue hover:bg-sigsBlue/5",
+    primary: "bg-jacarandaPurple text-white hover:bg-jacarandaPurple/90 shadow-sm border border-transparent",
+    secondary: "bg-white text-jacarandaPurple hover:bg-gray-50 border border-gray-200",
+    outline: "bg-transparent text-jacarandaPurple border-2 border-jacarandaPurple hover:bg-jacarandaPurple/5",
   };
   
   const sizeStyles = {

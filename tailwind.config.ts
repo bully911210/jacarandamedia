@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				sigsBlue: '#1A237E',
-				sigsOrange: '#FF5722',
+				jacarandaPurple: '#9b87f5',
+				jacarandaGold: '#F97316',
 			},
 			fontFamily: {
 				sans: ['Inter var', 'Inter', 'sans-serif'],
-				heading: ['Roboto', 'sans-serif'],
+				heading: ['Montserrat', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -106,10 +106,10 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 0 0 rgba(255, 87, 34, 0.4)',
+						boxShadow: '0 0 0 0 rgba(155, 135, 245, 0.4)',
 					},
 					'50%': { 
-						boxShadow: '0 0 20px 5px rgba(255, 87, 34, 0.2)',
+						boxShadow: '0 0 20px 5px rgba(155, 135, 245, 0.2)',
 					}
 				}
 			},
@@ -127,7 +127,7 @@ export default {
 				'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
 				'medium': '0 8px 30px rgba(0, 0, 0, 0.1)',
 				'card': '0 10px 30px rgba(0, 0, 0, 0.08)',
-				'highlight': '0 0 15px rgba(255, 87, 34, 0.3)',
+				'highlight': '0 0 15px rgba(155, 135, 245, 0.3)',
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

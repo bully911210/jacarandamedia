@@ -24,7 +24,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className
       )}
     >
-      <div className="w-14 h-14 bg-sigsBlue/10 rounded-lg flex items-center justify-center text-sigsBlue mb-6">
+      <div className="w-14 h-14 bg-jacarandaPurple/10 rounded-lg flex items-center justify-center text-jacarandaPurple mb-6">
         {icon}
       </div>
       
@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-sigsOrange mr-2 mt-1">•</span>
+            <span className="text-jacarandaGold mr-2 mt-1">•</span>
             <span>{feature}</span>
           </li>
         ))}

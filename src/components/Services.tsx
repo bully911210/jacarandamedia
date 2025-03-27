@@ -1,111 +1,129 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { LayoutGrid, Hash, Pencil, Target, Users, Presentation, Palette } from 'lucide-react';
+import AnimateOnScroll from './AnimateOnScroll';
 import ServiceCard from './ServiceCard';
-import { MessageSquare, Phone, Users, Handshake, Calendar, CheckCheck } from 'lucide-react';
-import CTAButton from './CTAButton';
 
 const Services: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach(el => observer.observe(el));
-
-    return () => {
-      elements?.forEach(el => observer.unobserve(el));
-    };
-  }, []);
-
   return (
-    <section id="services" className="section bg-gradient-to-b from-white to-gray-50" ref={sectionRef}>
-      <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll">Human-Powered Services</h2>
-          <p className="text-xl text-gray-600 animate-on-scroll delay-100">
-            Our dedicated team of professionals offers comprehensive reception and sales services, ensuring your business never misses an opportunity to connect with customers.
-          </p>
-        </div>
+    <section id="services" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <AnimateOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-jacarandaPurple">Services</span></h2>
+            <div className="w-24 h-1 bg-jacarandaGold mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive digital marketing solutions tailored to your unique business needs and goals.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="animate-on-scroll delay-100">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimateOnScroll delay="delay-100">
             <ServiceCard
-              title="Inbound Reception Services"
-              description="Our trained human reception agents answer and qualify every call and chat with professionalism and care."
-              icon={<Phone size={28} />}
+              title="Digital Marketing Strategy"
+              description="Integrated approaches to social media, Google Ads, SEO, and content planning to maximize your online presence."
+              icon={<LayoutGrid size={28} />}
               features={[
-                "24/7 live call answering by real human agents",
-                "Accurate message taking and call routing",
-                "New client intake and appointment scheduling",
-                "Seamless integration with your existing systems",
-                "Bilingual support options available"
+                "Comprehensive market analysis",
+                "Competitor benchmarking",
+                "Custom strategy development",
+                "Performance tracking",
+                "ROI optimization"
               ]}
             />
-          </div>
+          </AnimateOnScroll>
 
-          <div className="animate-on-scroll delay-200">
+          <AnimateOnScroll delay="delay-200">
             <ServiceCard
-              title="Outbound Sales Services"
-              description="Our dedicated human sales agents proactively reach out to capture and convert leads for your business."
+              title="Social Media Content"
+              description="Creation, scheduling, monitoring, and optimization of engaging content that builds your brand and connects with your audience."
+              icon={<Hash size={28} />}
+              features={[
+                "Platform-specific content creation",
+                "Engagement strategy",
+                "Community management",
+                "Content calendar planning",
+                "Performance analytics"
+              ]}
+            />
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay="delay-300">
+            <ServiceCard
+              title="Copywriting"
+              description="Persuasive, creative content that tells your story, engages your audience, and drives conversions across all channels."
+              icon={<Pencil size={28} />}
+              features={[
+                "Website copy optimization",
+                "Email marketing content",
+                "Blog and article writing",
+                "Ad copy creation",
+                "Brand voice development"
+              ]}
+            />
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay="delay-100">
+            <ServiceCard
+              title="Paid Advertising"
+              description="Strategic campaign management across Meta, LinkedIn, Google, and other platforms to drive traffic, leads, and sales."
+              icon={<Target size={28} />}
+              features={[
+                "Platform selection strategy",
+                "Audience targeting",
+                "Ad creative development",
+                "Budget optimization",
+                "Conversion tracking"
+              ]}
+            />
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay="delay-200">
+            <ServiceCard
+              title="Lead Generation"
+              description="Targeted strategies to attract and convert qualified leads that translate into measurable business growth."
               icon={<Users size={28} />}
               features={[
-                "Proactive lead follow-up within minutes",
-                "Personalized outreach campaigns",
-                "Expert qualification of prospects",
-                "Detailed call notes and reporting",
-                "Appointment setting and calendar management"
+                "Lead magnet creation",
+                "Landing page optimization",
+                "Funnel development",
+                "Qualification processes",
+                "Lead nurturing systems"
               ]}
             />
-          </div>
-        </div>
+          </AnimateOnScroll>
 
-        <div className="bg-sigsBlue/5 rounded-2xl p-8 md:p-12 relative overflow-hidden animate-on-scroll delay-300">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-sigsBlue/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-sigsOrange/10 rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl"></div>
-          
-          <div className="relative max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">The Human Advantage</h3>
-            
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
-              <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-sigsBlue/10 flex items-center justify-center mx-auto mb-4">
-                  <MessageSquare size={24} className="text-sigsBlue" />
-                </div>
-                <h4 className="font-semibold mb-2">Natural Conversations</h4>
-                <p className="text-sm text-gray-600">Real human agents who understand context and nuance.</p>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-sigsBlue/10 flex items-center justify-center mx-auto mb-4">
-                  <Handshake size={24} className="text-sigsBlue" />
-                </div>
-                <h4 className="font-semibold mb-2">Build Real Relationships</h4>
-                <p className="text-sm text-gray-600">Create meaningful connections with your customers.</p>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-sigsBlue/10 flex items-center justify-center mx-auto mb-4">
-                  <Calendar size={24} className="text-sigsBlue" />
-                </div>
-                <h4 className="font-semibold mb-2">Adaptable Support</h4>
-                <p className="text-sm text-gray-600">Professionals who adapt to your changing needs.</p>
-              </div>
-            </div>
-            
-            <CTAButton variant="primary" href="#contact">
-              Schedule a Free Consultation
-            </CTAButton>
-          </div>
+          <AnimateOnScroll delay="delay-300">
+            <ServiceCard
+              title="Workshops & Training"
+              description="Hands-on sessions, personalized group training, and one-on-one consulting to empower your team."
+              icon={<Presentation size={28} />}
+              features={[
+                "Social media masterclasses",
+                "Digital marketing fundamentals",
+                "Content creation workshops",
+                "Advertising platform training",
+                "Strategy development sessions"
+              ]}
+            />
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay="delay-400">
+            <ServiceCard
+              title="Branding"
+              description="Complete branding solutions including logo design, rebrands, creative photoshoots, and graphic design."
+              icon={<Palette size={28} />}
+              features={[
+                "Brand identity development",
+                "Visual asset creation",
+                "Brand guideline documentation",
+                "Brand voice definition",
+                "Brand consistency planning"
+              ]}
+              className="md:col-span-2 lg:col-span-3"
+            />
+          </AnimateOnScroll>
         </div>
       </div>
     </section>
