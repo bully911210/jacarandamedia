@@ -1,16 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
-export default defineConfig(({ mode }) => ({
-  base: '/jacarandamedia/',  // This should match your repository name
+export default defineConfig({
+  base: '/jacarandamedia/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: true, // Add source maps for better debugging
     rollupOptions: {
+      external: ['@tanstack/react-query'],
       output: {
-        manualChunks: undefined,
+        globals: {
+          '@tanstack/react-query': 'ReactQuery'
+        },
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@/components/ui']
+        },
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name.split('.').at(1);
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
@@ -23,13 +30,15 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  plugins: [
-    react(),
-    mode === 'development' && componentTagger(),
-  ].filter(Boolean),
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+  server: {
+    headers: {
+      'Content-Type': 'application/javascript',
+    },
+  },
+});

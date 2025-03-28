@@ -1,8 +1,8 @@
-# This workflow is disabled due to deployment issues
-name: DISABLED - Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
-    branches: [ none ]  # Effectively prevents this from running
 
 permissions:
   contents: read
@@ -46,6 +46,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
 
 

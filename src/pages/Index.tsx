@@ -1,16 +1,15 @@
 
-import React, { useEffect } from 'react';
-import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import AddedServices from '@/components/AddedServices';
-import Testimonials from '@/components/Testimonials';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import { useEffect, useCallback } from 'react';
+import Navigation from '../components/Navigation';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import AddedServices from '../components/AddedServices';
+import Testimonials from '../components/Testimonials';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 const Index = () => {
-  // Initialize animations for elements that come into view
-  useEffect(() => {
+  const initializeAnimations = useCallback(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -25,10 +24,12 @@ const Index = () => {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(el => observer.observe(el));
 
-    return () => {
-      animatedElements.forEach(el => observer.unobserve(el));
-    };
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    initializeAnimations();
+  }, [initializeAnimations]);
 
   return (
     <div className="min-h-screen w-full bg-white">

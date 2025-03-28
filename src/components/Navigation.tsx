@@ -10,9 +10,9 @@ const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Services', href: '#services' },
-    { name: 'Success Stories', href: '#testimonials' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Success Stories', href: '/#testimonials' },
   ];
 
   useEffect(() => {
