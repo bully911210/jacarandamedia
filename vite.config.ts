@@ -4,7 +4,16 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: '/jacarandamedia/', // Updated with your actual repository name
+  base: '/jacarandamedia/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
   server: {
     host: "::",
     port: 8080,
