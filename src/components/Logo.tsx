@@ -3,8 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Logo: React.FC = () => {
-  // Note: This logo URL should be replaced with your actual logo once available
-  const logoUrl = "https://placehold.co/200x60/9b87f5/ffffff?text=Jacaranda+Media";
+  const logoUrl = "https://i.ibb.co/gFwfBtK7/background-removed-image-6-EUW6an-JRtqvedv-SA70a-Dw-1.png";
   
   return (
     <Link to="/" className="flex items-center transition-transform duration-300 hover:scale-105">
