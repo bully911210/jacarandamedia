@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
       <img 
         src={logoUrl} 
         alt="Jacaranda Media Logo" 
-        className="h-10 md:h-12"
+        className="h-20 md:h-24"
       />
     </Link>
   );
