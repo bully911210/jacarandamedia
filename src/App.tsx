@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename="/jacarandamedia">
+      <BrowserRouter basename="/jacarandamedia"> {/* Must match repository name */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />

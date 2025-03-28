@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: '/jacarandamedia/',
+  base: '/jacarandamedia/', // Make sure this matches your GitHub repository name
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -30,7 +30,16 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'copy-files',
+      writeBundle() {
+        // Copy .nojekyll to dist folder
+        require('fs').copyFileSync('.nojekyll', 'dist/.nojekyll');
+      }
+    }
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
