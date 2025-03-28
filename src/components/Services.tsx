@@ -10,10 +10,9 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-4">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-jacarandaPurple">Services</span></h2>
-            <div className="w-24 h-1 bg-jacarandaGold mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Focused digital marketing solutions tailored to your unique business needs and goals.
+              Custom-built digital marketing solutions designed to fuel your business growth—fast.
             </p>
           </div>
         </AnimateOnScroll>
