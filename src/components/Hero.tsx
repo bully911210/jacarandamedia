@@ -36,16 +36,16 @@ const Hero: React.FC = () => {
           <div className="order-2 lg:order-1">
             <div className="max-w-2xl">
               <div className="inline-block px-4 py-1.5 rounded-full bg-jacarandaPurple/10 text-jacarandaPurple text-sm font-medium mb-4 animate-on-scroll">
-                Digital Marketing + Paid Advertising Specialists
+                Digital Marketing & Paid Advertising Experts
               </div>
               
               <h1 className="text-5xl font-bold leading-tight mb-6 animate-on-scroll delay-100 text-balance">
-                We Do Marketing
-                <span className="text-jacarandaPurple"> The Right Way</span>
+                Marketing Done Right,
+                <span className="text-jacarandaPurple"> Every Time</span>
               </h1>
               
               <p className="text-xl text-gray-700 mb-8 animate-on-scroll delay-200 text-balance">
-                Empowering your business with innovative, personalized marketing strategies that drive real results. From social media to automation solutions, we're your complete digital partner.
+                Empower your business with cutting-edge, tailored marketing strategies that deliver measurable growth. From dynamic social media campaigns to seamless automation solutions, we're your all-in-one digital partner for success.
               </p>
               
               <div className="space-y-4 sm:space-y-0 sm:flex sm:space-x-4 animate-on-scroll delay-300">
