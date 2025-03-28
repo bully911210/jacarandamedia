@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import CTAButton from './CTAButton';
 import AnimateOnScroll from './AnimateOnScroll';
+import { getAssetPath } from '@/utils/assetHelpers';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -86,7 +87,7 @@ const Hero: React.FC = () => {
           <div className="relative order-1 lg:order-2 animate-on-scroll delay-200">
             <div className="aspect-square max-w-md mx-auto bg-white rounded-2xl shadow-card overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src={getAssetPath('assets/images/hero-image.jpg')}
                 alt="Creative marketing team collaboration" 
                 className="w-full h-full object-cover"
               />
