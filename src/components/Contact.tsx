@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import AnimateOnScroll from './AnimateOnScroll';
 import CTAButton from './CTAButton';
 
@@ -10,10 +10,10 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Help, a Quote, or a <span className="text-jacarandaPurple">Coffee?</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Grow Your Business <span className="text-jacarandaPurple">Together?</span></h2>
             <div className="w-24 h-1 bg-jacarandaGold mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We'd love to hear from you! Reach out for a consultation, quote, or just to chat about your marketing goals.
+              Book a free 30-minute strategy call to discuss your marketing goals and how we can help you achieve them.
             </p>
           </div>
         </AnimateOnScroll>
@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-10">
           <AnimateOnScroll delay="delay-100">
             <div className="bg-purple-50 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold mb-6">Schedule Your Free Strategy Call</h3>
               
               <form className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -56,27 +56,37 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                  <input
+                    type="text"
+                    id="company"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jacarandaPurple focus:border-jacarandaPurple"
+                    placeholder="Your company"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="services" className="block text-sm font-medium text-gray-700 mb-1">Services of Interest</label>
                   <select
-                    id="subject"
+                    id="services"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jacarandaPurple focus:border-jacarandaPurple"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="quote">Request a Quote</option>
-                    <option value="consultation">Book a Consultation</option>
-                    <option value="workshop">Workshop Inquiry</option>
+                    <option value="">Select a service</option>
+                    <option value="paid-advertising">Paid Advertising</option>
+                    <option value="lead-generation">Lead Generation</option>
                     <option value="automation">Automation Solutions</option>
-                    <option value="other">Other</option>
+                    <option value="multiple">Multiple Services</option>
+                    <option value="not-sure">Not Sure Yet</option>
                   </select>
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">What are your main marketing challenges?</label>
                   <textarea
                     id="message"
-                    rows={5}
+                    rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jacarandaPurple focus:border-jacarandaPurple"
-                    placeholder="Tell us about your project or ask us anything"
+                    placeholder="Tell us about your current challenges and goals"
                   ></textarea>
                 </div>
                 
@@ -85,7 +95,7 @@ const Contact: React.FC = () => {
                   size="lg"
                   className="w-full"
                 >
-                  Send Message
+                  Book My Strategy Call
                 </CTAButton>
               </form>
             </div>
@@ -94,84 +104,88 @@ const Contact: React.FC = () => {
           <AnimateOnScroll delay="delay-200">
             <div>
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-6">Why Book a Call With Us?</h3>
                 
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="w-10 h-10 rounded-full bg-jacarandaPurple/10 flex items-center justify-center text-jacarandaPurple mr-4 mt-1">
+                      <span className="text-xl font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Personalized Strategy</h4>
+                      <p className="text-gray-600">Get tailored marketing solutions specifically designed for your business needs and goals.</p>
+                    </div>
+                  </li>
+                  
+                  <li className="flex items-start">
+                    <div className="w-10 h-10 rounded-full bg-jacarandaPurple/10 flex items-center justify-center text-jacarandaPurple mr-4 mt-1">
+                      <span className="text-xl font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Expert Insights</h4>
+                      <p className="text-gray-600">Benefit from our experience across multiple industries and marketing platforms.</p>
+                    </div>
+                  </li>
+                  
+                  <li className="flex items-start">
+                    <div className="w-10 h-10 rounded-full bg-jacarandaPurple/10 flex items-center justify-center text-jacarandaPurple mr-4 mt-1">
+                      <span className="text-xl font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">No Obligation</h4>
+                      <p className="text-gray-600">Your free strategy call comes with zero commitment - just valuable advice you can implement.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-jacarandaPurple rounded-2xl p-8 text-white">
+                <h3 className="text-xl font-bold mb-4">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 rounded-full bg-jacarandaPurple/10 flex items-center justify-center text-jacarandaPurple mr-4">
-                      <Phone size={24} />
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                      <Calendar size={24} className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Phone</h4>
-                      <a href="tel:+27123456789" className="text-gray-600 hover:text-jacarandaPurple">+27 12 345 6789</a>
+                      <h4 className="font-semibold">Prefer Direct Scheduling?</h4>
+                      <a href="#" className="text-white/90 hover:text-white underline">
+                        View our calendar to book directly
+                      </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="w-12 h-12 rounded-full bg-jacarandaPurple/10 flex items-center justify-center text-jacarandaPurple mr-4">
-                      <Mail size={24} />
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                      <Phone size={24} className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Email</h4>
-                      <a href="mailto:hello@jacarandamedia.co.za" className="text-gray-600 hover:text-jacarandaPurple">hello@jacarandamedia.co.za</a>
+                      <h4 className="font-semibold">Phone</h4>
+                      <a href="tel:+27123456789" className="text-white/90 hover:text-white">+27 12 345 6789</a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="w-12 h-12 rounded-full bg-jacarandaPurple/10 flex items-center justify-center text-jacarandaPurple mr-4">
-                      <MapPin size={24} />
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                      <Mail size={24} className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Office</h4>
-                      <address className="text-gray-600 not-italic">
+                      <h4 className="font-semibold">Email</h4>
+                      <a href="mailto:hello@jacarandamedia.co.za" className="text-white/90 hover:text-white">hello@jacarandamedia.co.za</a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                      <MapPin size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Office</h4>
+                      <address className="text-white/90 not-italic">
                         123 Digital Avenue<br />
                         Sandton, Johannesburg<br />
                         South Africa
                       </address>
                     </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-jacarandaPurple rounded-2xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">Business Hours</h3>
-                <ul className="space-y-2">
-                  <li className="flex justify-between">
-                    <span>Monday - Friday:</span>
-                    <span>8:30 AM - 5:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span>10:00 AM - 2:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Sunday:</span>
-                    <span>Closed</span>
-                  </li>
-                </ul>
-                
-                <div className="mt-6 pt-6 border-t border-white/20">
-                  <h4 className="font-semibold mb-2">Connect With Us</h4>
-                  <div className="flex space-x-4">
-                    <a href="https://facebook.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                      </svg>
-                    </a>
-                    <a href="https://instagram.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                    </a>
-                    <a href="https://linkedin.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </div>

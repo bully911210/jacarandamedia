@@ -10,9 +10,9 @@ const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: '#' },
+    { name: 'Services', href: '#services' },
+    { name: 'Success Stories', href: '#testimonials' },
   ];
 
   useEffect(() => {
@@ -57,9 +57,9 @@ const Navigation: React.FC = () => {
             <CTAButton
               variant="primary"
               size="sm"
-              href="/contact"
+              href="#contact"
             >
-              Get in Touch
+              Book a Free Call
             </CTAButton>
           </div>
         </div>
@@ -100,10 +100,11 @@ const Navigation: React.FC = () => {
               <CTAButton 
                 variant="primary" 
                 size="lg"
-                href="/contact"
+                href="#contact"
                 className="w-full"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Get in Touch
+                Book a Free Call
               </CTAButton>
             </div>
           </nav>

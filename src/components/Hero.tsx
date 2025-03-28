@@ -52,17 +52,17 @@ const Hero: React.FC = () => {
                 <CTAButton 
                   variant="primary" 
                   size="lg" 
-                  href="#services"
+                  href="#contact"
                 >
-                  View Our Services
+                  Book a Free Strategy Call
                 </CTAButton>
                 
                 <CTAButton 
                   variant="outline" 
                   size="lg" 
-                  href="#contact"
+                  href="#services"
                 >
-                  Let's Get Started
+                  Explore Our Services
                 </CTAButton>
               </div>
               
