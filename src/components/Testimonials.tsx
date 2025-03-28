@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import TestimonialCard from './TestimonialCard';
 import AnimateOnScroll from './AnimateOnScroll';
 import CTAButton from './CTAButton';
@@ -23,8 +23,8 @@ const Testimonials: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimateOnScroll delay="delay-100">
             <TestimonialCard
-              quote="After just one strategy call, Jacaranda Media developed a paid advertising campaign that increased our lead conversion by 45% in two months."
-              author="Michael Chen"
+              quote="We thought we had our automation dialed in—turns out, we were leaving money on the table. One call with Jacaranda Media changed that. Their tweaks saved us hours and sped up our client response time overnight."
+              author="Michael Robert"
               company="TechSolutions Inc."
               rating={5}
             />
@@ -32,8 +32,8 @@ const Testimonials: React.FC = () => {
           
           <AnimateOnScroll delay="delay-200">
             <TestimonialCard
-              quote="Our initial consultation revealed automation opportunities we'd never considered. The solutions they implemented saved us countless hours and improved client response time."
-              author="Sarah Johnson"
+              quote="I've been burned by marketing agencies before, so I wasn't expecting much. But Jacaranda Media actually listened. Their lead-gen strategy wasn't just another cookie-cutter template—it worked. Fast."
+              author="Christiaan Oberholzer"
               company="Retail Excellence"
               rating={5}
             />
@@ -41,8 +41,8 @@ const Testimonials: React.FC = () => {
           
           <AnimateOnScroll delay="delay-300">
             <TestimonialCard
-              quote="I was skeptical about another marketing agency, but our strategy call convinced me. Their tailored approach to lead generation transformed our business within weeks."
-              author="Dr. Rebecca Taylor"
+              quote="We weren't just looking for more leads—we needed the right ones. The campaign Jacaranda Media built for us didn't just bring in traffic, it brought in patients who actually booked appointments. Huge difference."
+              author="Dr. Rebecca Bezuidenhout"
               company="Wellness Medical Group"
               rating={5}
             />
