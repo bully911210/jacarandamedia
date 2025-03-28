@@ -3,51 +3,32 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: '/jacarandamedia/', // Make sure this matches your GitHub repository name
+  base: '/jacarandamedia/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true, // Add source maps for better debugging
+    sourcemap: true,
     rollupOptions: {
-      external: ['@tanstack/react-query'],
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
       output: {
-        globals: {
-          '@tanstack/react-query': 'ReactQuery'
-        },
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@/components/ui']
-        },
-        assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(1);
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor-react';
+            if (id.includes('@radix-ui')) return 'vendor-radix';
+            if (id.includes('lucide')) return 'vendor-lucide';
+            return 'vendor';
           }
-          return `assets/${extType}/[name]-[hash][extname]`;
-        },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
+        }
       },
     },
   },
-  plugins: [
-    react(),
-    {
-      name: 'copy-files',
-      writeBundle() {
-        // Copy .nojekyll to dist folder
-        require('fs').copyFileSync('.nojekyll', 'dist/.nojekyll');
-      }
-    }
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  server: {
-    headers: {
-      'Content-Type': 'application/javascript',
-    },
-  },
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  }
 });
