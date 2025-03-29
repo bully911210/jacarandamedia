@@ -11,8 +11,8 @@ const Navigation: React.FC = () => {
   
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Success Stories', href: '/#testimonials' },
+    { name: 'Our Services', href: '/#services' },
+    { name: 'Case Studies', href: '/#testimonials' },
   ];
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const Navigation: React.FC = () => {
               size="sm"
               href="#contact"
             >
-              Book a Free Call
+              Free Call Booking
             </CTAButton>
           </div>
         </div>
@@ -104,7 +104,7 @@ const Navigation: React.FC = () => {
                 className="w-full"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Book a Free Call
+                Free Call Booking
               </CTAButton>
             </div>
           </nav>

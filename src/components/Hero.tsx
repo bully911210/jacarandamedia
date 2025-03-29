@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import CTAButton from './CTAButton';
 import AnimateOnScroll from './AnimateOnScroll';
-import { getAssetPath } from '@/utils/assetHelpers';
+// import heroImage from '@/assets/images/hero-image.jpg';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -36,17 +36,14 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="max-w-2xl">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-jacarandaPurple/10 text-jacarandaPurple text-sm font-medium mb-4 animate-on-scroll">
-                Digital Marketing & Paid Advertising Experts
-              </div>
-              
               <h1 className="text-5xl font-bold leading-tight mb-6 animate-on-scroll delay-100 text-balance">
-                Marketing Done Right,
-                <span className="text-jacarandaPurple"> Every Time</span>
+                <span className="text-jacarandaPurple animate-pulse inline-block">More Leads.</span>{' '}
+                Better Clients.{' '}
+                <span className="text-jacarandaPurple">Zero Waste.</span>
               </h1>
               
               <p className="text-xl text-gray-700 mb-8 animate-on-scroll delay-200 text-balance">
-                Empower your business with cutting-edge, tailored marketing strategies that deliver measurable growth. From dynamic social media campaigns to seamless automation solutions, we're your all-in-one digital partner for success.
+                No gimmicks. No wasted budget. Just precision marketing that drives revenue. Whether it's high-converting campaigns, automation that scales, or leads that actually convert - we make sure every move counts.
               </p>
               
               <div className="space-y-4 sm:space-y-0 sm:flex sm:space-x-4 animate-on-scroll delay-300">
@@ -69,12 +66,12 @@ const Hero: React.FC = () => {
               
               <div className="mt-10 grid grid-cols-3 gap-8 animate-on-scroll delay-400">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-jacarandaPurple">250+</p>
+                  <p className="text-3xl font-bold text-jacarandaPurple">61+</p>
                   <p className="text-sm text-gray-600 mt-1">Happy Clients</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-jacarandaPurple">15+</p>
-                  <p className="text-sm text-gray-600 mt-1">Industries Served</p>
+                  <p className="text-3xl font-bold text-jacarandaPurple">9+</p>
+                  <p className="text-sm text-gray-600 mt-1">Industries Conquered</p>
                 </div>
                 <div className="text-center">
                   <p className="text-3xl font-bold text-jacarandaPurple">100%</p>
@@ -87,7 +84,7 @@ const Hero: React.FC = () => {
           <div className="relative order-1 lg:order-2 animate-on-scroll delay-200">
             <div className="aspect-square max-w-md mx-auto bg-white rounded-2xl shadow-card overflow-hidden">
               <img 
-                src={getAssetPath('assets/images/hero-image.jpg')}
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                 alt="Creative marketing team collaboration" 
                 className="w-full h-full object-cover"
               />
@@ -99,8 +96,8 @@ const Hero: React.FC = () => {
                   <span className="text-jacarandaPurple text-xl font-bold">100%</span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Transparent</p>
-                  <p className="text-xs text-gray-500">No Hidden Fees</p>
+                  <p className="text-sm font-medium">Full Transparency</p>
+                  <p className="text-xs text-gray-500">No hidden fees. No guesswork.</p>
                 </div>
               </div>
             </div>
@@ -111,8 +108,8 @@ const Hero: React.FC = () => {
                   <span className="text-jacarandaGold text-xl font-bold">5★</span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Client Rating</p>
-                  <p className="text-xs text-gray-500">Excellence Guaranteed</p>
+                  <p className="text-sm font-medium">5-Star Rated</p>
+                  <p className="text-xs text-gray-500">Because we deliver.</p>
                 </div>
               </div>
             </div>

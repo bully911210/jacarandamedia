@@ -1,10 +1,10 @@
 
-import { useEffect, useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import AddedServices from '../components/AddedServices';
-import Results from '../components/Results';
+import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -37,7 +37,7 @@ const Index = () => {
       <Hero />
       <Services />
       <AddedServices />
-      <Results />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

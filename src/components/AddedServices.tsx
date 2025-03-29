@@ -28,7 +28,7 @@ const AddedServices: React.FC = () => {
               <h3 className="text-2xl font-bold mb-4">Lead Integration Automation</h3>
               
               <p className="text-gray-600 mb-6">
-                Seamlessly integrate lead generation ads into your systems to dramatically increase speed-to-lead and boost conversions. Our automation solutions ensure leads are instantly processed and acted upon.
+                Seamlessly integrate lead generation ads into your systems to increase speed-to-lead and boost conversions. Our automation solutions ensure leads are instantly processed and acted upon.
               </p>
               
               <ul className="space-y-3 mb-8">

@@ -1,0 +1,2 @@
+npm i        # Install dependencies
+npm run dev  # Start development server
